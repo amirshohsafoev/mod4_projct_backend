@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_225321) do
   create_table "words", force: :cascade do |t|
     t.string "headword"
     t.string "definition"
-    t.string "eaxample"
+    t.string "example"
     t.string "synonyms"
     t.boolean "must_learn"
     t.integer "language_id"

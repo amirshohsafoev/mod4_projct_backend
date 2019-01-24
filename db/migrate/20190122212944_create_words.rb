@@ -3,7 +3,7 @@ class CreateWords < ActiveRecord::Migration[5.2]
     create_table :words do |t|
       t.string :headword
       t.string :definition
-      t.string :eaxample
+      t.string :example
       t.string :synonyms
       t.boolean :must_learn
       t.integer :language_id
