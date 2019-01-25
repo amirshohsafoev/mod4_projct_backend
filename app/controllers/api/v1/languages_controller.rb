@@ -1,5 +1,6 @@
 class Api::V1::LanguagesController < ApplicationController
-  before_action :find_language, only: [:show, :update, :destroy]
+  skip_before_action :authorize, only:[:index, :show]
+  # before_action :find_language, only: [:index, :show,:create, :update, :destroy]
     def index
     @languages = Language.all
     render json: @languages
@@ -23,7 +24,7 @@ class Api::V1::LanguagesController < ApplicationController
 
     private
     def find_language
-      @language = Language.find(params [:id])
+      @language = Language.find(params[:id])
     end
     def language_params
        params.permit(:name)
